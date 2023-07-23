@@ -1,0 +1,6 @@
+.invalid {
+  border: 2px solid darkred;
+  border-radius: 4px;
+  /* padding: 8px; */
+  background-color: salmon;
+}
