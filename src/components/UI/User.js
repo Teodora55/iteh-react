@@ -6,26 +6,21 @@ const User = (props) => {
     ime: false,
     prezime: false,
     kompanija: false,
-    adresa1: false,
-    adresa2: false,
+    adresa: false,
     postanskiBr: false,
     mesto: false,
     drzava: false,
     email: false,
-    emailPotvrda: false,
   });
   const [user, setUser] = useState({});
 
-  const getMessage = (valid,user) => {
+  const getMessage = (valid) => {
     let isValid = true;
     Object.keys(valid).forEach((key) => {
       isValid = isValid && valid[key];
     });
     if (!isValid) {
       return "Niste pravilno uneli podatke";
-    }
-    if (user.email !== user.emailPotvrda) {
-      return "Email adrese se ne poklapaju";
     }
     return "";
   };
@@ -72,19 +67,11 @@ const User = (props) => {
         onChange={changeHandler}
       />
       <Input
-        label="Adresa 1"
-        name="adresa1"
-        placeholder="Adresa 1"
+        label="Adresa"
+        name="adresa"
+        placeholder="Adresa"
         type="text"
         validator="^[a-zA-Z0-9\s-]+$"
-        onChange={changeHandler}
-      />
-      <Input
-        label="Adresa 2"
-        name="adresa2"
-        placeholder="Adresa 2"
-        type="text"
-        validator="^.*$"
         onChange={changeHandler}
       />
       <Input
@@ -114,14 +101,6 @@ const User = (props) => {
       <Input
         label="Email"
         name="email"
-        placeholder="Email"
-        type="email"
-        validator="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$"
-        onChange={changeHandler}
-      />
-      <Input
-        label="Potvrda email adrese"
-        name="emailPotvrda"
         placeholder="Email"
         type="email"
         validator="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$"

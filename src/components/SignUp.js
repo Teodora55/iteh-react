@@ -77,7 +77,7 @@ const SignUp = () => {
         </label>
       </div>
       <button type="submit">Prijavite se</button>
-      <h3>Ukupna cena je: {price}</h3>
+      <p>Ukupna cena je: {price}</p>
       {message !== "" && <p>{message}</p>}
     </form>
   );
